@@ -1,25 +1,60 @@
-Mouse Recorder & Replayer
+# 🖱️ Mouse Recorder & Replayer
 
 Record and replay repetitive GUI tasks with Python.
 
-Uses pynput to listen for mouse/keyboard events  
-Uses PyAutoGUI to replay recorded actions  
-Actions (clicks, coordinates, keystrokes, mouse drags,) are saved to a file, then read back to replicate them on demand
+## How It Works
 
-Recorder: Press F9 to pause, F9 again to resume recording
-Replayer and Recorder: 3 second delay for time to move window out of the way
-Captures your mouse clicks and keystrokes via background pynput
+- **Record** mouse and keyboard events using [`pynput`](https://pypi.org/project/pynput/) (background listener)
+- **Replay** captured actions using [`PyAutoGUI`](https://pyautogui.readthedocs.io/)
+- Actions (clicks, coordinates, keystrokes, mouse drags) are saved to a timestamped JSON file, then read back to replicate them on demand.
 
-Record a test (creates a time-stamped json file):
-Example command: python recorder.py test_login.json
-Then perform your actions and press Esc to save.
+---
 
-Replay that same test:
-Example command: python replayer.py test_login.json
-Modifier: --speed 2 to play back at double speed
+## Features
 
-Note: ESC stops the recording and creates the .json file
-Hand edit your JSON to insert whole words/phrases
+- **Pause/Resume Recording** — Press `F9` to pause recording; press `F9` again to resume.
+- **3-Second Startup Delay** — Both the recorder and replayer give you 3 seconds to switch to the target window before recording or replaying begins.
+- **ESC to Save** — Press `Esc` at any time during recording to stop and save your JSON file.
+- **Customizable Speed** — Replay at double speed (or any multiplier) with the `--speed` flag.
+- **Editable Output** — JSON files are human-readable; hand-edit them to insert full words, phrases, or adjust timings.
 
-Credit to Yemdi for the original inspiration: 
-https://thethinkdrop.blogspot.com/2026/01/step-by-step-pyautogui-tutorial.html
+---
+
+## Quick Start
+
+### 1. Record a Test
+
+```bash
+python recorder.py test_login.json
+```
+
+Perform your actions. Press **Esc** when done to save `test_login.json`.
+
+### 2. Replay That Test
+
+```bash
+python replayer.py test_login.json
+```
+
+Play back at **2× speed**:
+
+```bash
+python replayer.py test_login.json --speed 2
+```
+
+---
+
+## Tips & Notes
+
+| Tip | Description |
+|-----|-------------|
+| 🎯 **Window setup** | After starting the script, quickly switch to the application you want to automate. |
+| ✏️ **Edit recordings** | Open the generated `.json` file in any text editor to tweak keystrokes or insert pauses. |
+| 🖥️ **No GUI?** | Open the scripts in [Thonny](https://thonny.org/) or any Python IDE for a graphical run/debug experience. |
+
+---
+
+## Credits
+
+Inspired by Yemdi's tutorial:  
+[Step by Step PyAutoGUI Tutorial](https://thethinkdrop.blogspot.com/2026/01/step-by-step-pyautogui-tutorial.html)
