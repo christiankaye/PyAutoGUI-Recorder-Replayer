@@ -144,6 +144,11 @@ def replay_actions(file_path='recorded_actions.json', speed=1.0, max_delay=5.0,
         except Exception as e:
             print(f"[{i+1}] Error replaying action {action}: {e}")
 
+    # Safeguard: release any modifier keys that a missing key_release could
+    # have left stuck (e.g. Shift held down makes numbers type as symbols).
+    for mod in ('shift', 'shiftright', 'ctrl', 'ctrlright', 'alt', 'altright', 'win'):
+        pyautogui.keyUp(mod)
+
     print("\nReplay finished.")
 
 # --- Main execution ---
