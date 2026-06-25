@@ -1,0 +1,60 @@
+[
+    {
+        "type": "click",
+        "x": 535,
+        "y": 577,
+        "button": "Button.left",
+        "time": 1782352445.3074875,
+        "comment": "time stamp is optional. Correct or remove newly added time stamps."
+    },
+    {
+        "type": "click",
+        "x": 703,
+        "y": 742,
+        "button": "Button.left"
+    },
+    {
+        "type": "click",
+        "x": 518,
+        "y": 25,
+        "button": "Button.left"
+    },
+    {
+        "type": "click",
+        "x": 703,
+        "y": 742,
+        "button": "Button.left",
+        "comment": "Open the File menu"
+    },
+    {
+        "type": "click",
+        "x": 560,
+        "y": 360,
+        "button": "Button.left"
+    },
+    {   "type": "type",
+        "text": "Hello world",
+        "interval": 0.02
+    },
+    {
+        "type": "click",
+        "x": 519,
+        "y": 141,
+        "button": "Button.left"
+    },
+    {
+        "type": "click",
+        "x": 703,
+        "y": 742,
+        "button": "Button.left",
+        "comment": "Open the File menu"
+    },
+    {
+        "type": "click",
+        "x": 535,
+        "y": 577,
+        "button": "Button.left",
+        "time": 1782352445.3074875,
+        "comment": "time stamp is optional"
+    }
+]

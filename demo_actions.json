@@ -1,0 +1,17 @@
+[
+    { "type": "comment", "text": "Demo: open a text field, type a message, then pause." },
+
+    { "type": "comment", "text": "Wait 2s for the target window to be ready." },
+    { "type": "wait", "seconds": 2 },
+
+    { "type": "comment", "text": "Click into the input field." },
+    { "type": "click", "x": 400, "y": 300, "button": "Button.left" },
+
+    { "type": "comment", "text": "Type a greeting, 20ms between keystrokes." },
+    { "type": "type", "text": "hello world", "interval": 0.02 },
+
+    { "type": "comment", "text": "Pause 1.5s so you can see the result." },
+    { "type": "wait", "seconds": 1.5 },
+
+    { "type": "comment", "text": "Done." }
+]
