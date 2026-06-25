@@ -4,7 +4,6 @@
         "x": 535,
         "y": 577,
         "button": "Button.left",
-        "time": 1782352445.3074875,
         "comment": "time stamp is optional. Correct or remove newly added time stamps."
     },
     {
@@ -54,7 +53,6 @@
         "x": 535,
         "y": 577,
         "button": "Button.left",
-        "time": 1782352445.3074875,
         "comment": "time stamp is optional"
     }
 ]
