@@ -25,10 +25,10 @@ Record and replay repetitive GUI tasks with Python.
 ### 1. Record a Test
 
 ```bash
-python recorder.py test_login.json
+python recorder.py test_run.json
 ```
-
-Perform your actions. Press **Esc** when done to save `test_login.json`.
+Press **F9** to pause and resume recording. (Helpful when switching windows, looking for addresses, etc.)
+Perform your actions. Press **F7** when done to save `test_run.json`.
 
 ### 2. Replay That Test
 
@@ -50,10 +50,9 @@ python replayer.py test_login.json --speed 2
 |-----|-------------|
 | 🎯 **Window setup** | After starting the script, quickly switch to the application you want to automate. |
 | ✏️ **Edit recordings** | Open the generated `.json` file in any text editor to tweak keystrokes or insert pauses. |
-| 🖥️ **No GUI?** | Open the scripts in [Thonny](https://thonny.org/) or any Python IDE for a graphical run/debug experience. |
-
+| 🖥️ **No GUI?** | Open the scripts in [Thonny](https://thonny.org/) or any Python IDE for a very good graphical run/debug experience. |
+| **Real World Use** | I use this tool to fill in my vehicle mileage on SAP / Concur.
 ---
-
 ## Credits
 
 Inspired by Yemdi's tutorial:  
