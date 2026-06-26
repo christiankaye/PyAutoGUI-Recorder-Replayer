@@ -141,6 +141,15 @@ def replay_actions(file_path='recorded_actions.json', speed=1.0, max_delay=5.0,
                 else:
                     pyautogui.keyUp(key)
 
+            elif action['type'] == 'comment':
+                # Comments document a recording; nothing to replay.
+                print(f"[{i+1}] # {action.get('text', '')}")
+
+            else:
+                # Unknown/typo'd action type: skip but report it so mistakes
+                # in a hand-edited JSON file don't get silently dropped.
+                print(f"[{i+1}] Skipping unknown action type: {action.get('type')!r}")
+
         except Exception as e:
             print(f"[{i+1}] Error replaying action {action}: {e}")
 
@@ -158,7 +167,7 @@ if __name__ == "__main__":
     parser.add_argument('file', nargs='?', default='recorded_actions.json',
                         help='Path to the actions JSON file (default: recorded_actions.json)')
     parser.add_argument('--speed', type=float, default=1.5,
-                        help='Playback speed multiplier. >1 is faster, <1 is slower (default: 1.0).')
+                        help='Playback speed multiplier. >1 is faster, <1 is slower (default: 1.5).')
     parser.add_argument('--max-delay', type=float, default=5.0,
                         help='Cap on reproduced delay between actions, in seconds (default: 5.0).')
     parser.add_argument('--default-delay', type=float, default=0.05,

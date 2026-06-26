@@ -35,7 +35,6 @@ def on_click(x, y, button, pressed):
         press_state['x'] = x
         press_state['y'] = y
         press_state['button'] = str(button)
-        press_state['time'] = time.time()
     else:
         start_x = press_state.get('x', x)
         start_y = press_state.get('y', y)
@@ -67,8 +66,8 @@ def on_press(key):
     """Callback function to handle key press events."""
     global paused
 
-    # Stop on Escape *before* recording, so the stop key isn't saved/replayed.
-    if key == keyboard.Key.esc:
+    # Stop on F7 *before* recording, so the stop key isn't saved/replayed.
+    if key == keyboard.Key.f7:
         print("Stopping recorder...")
         mouse_listener.stop()       # tell the mouse listener to stop too
         return False                # This stops the keyboard listener
@@ -104,8 +103,8 @@ def on_press(key):
 
 def on_release(key):
     """Callback function to handle key release events."""
-    # Don't record the Escape release (it's the stop key) or the F9 toggle.
-    if key == keyboard.Key.esc or key == keyboard.Key.f9:
+    # Don't record the F7 release (it's the stop key) or the F9 toggle.
+    if key == keyboard.Key.f7 or key == keyboard.Key.f9:
         return
 
     if paused:
@@ -127,7 +126,7 @@ def on_release(key):
     recorded_actions.append(action)
 
 # --- Main execution ---
-print("Starting input recorder. Press 'Esc' to stop, 'F9' to pause/resume.")
+print("Starting input recorder. Press 'F7' to stop, 'F9' to pause/resume.")
 print("Recording: mouse clicks and keyboard key presses/releases.")
 
 # Give the user 3 seconds to switch to the target window before recording.
@@ -142,15 +141,23 @@ key_listener = keyboard.Listener(on_press=on_press, on_release=on_release)
 mouse_listener.start()
 key_listener.start()
 
-# Wait for the listeners to stop (i.e., when 'Esc' is pressed)
+# Wait for the listeners to stop (i.e., when 'F7' is pressed)
 mouse_listener.join()        # Now this WILL finish because we stopped it
 key_listener.join()
 
 # Save the recorded actions to a file
 if recorded_actions:
-    with open(args.file, 'w') as f:
+    # Prompt for a filename: press Enter to accept the default, or type another.
+    default_name = args.file
+    chosen = input(f"\nSave as [{default_name}]: ").strip()
+    save_name = chosen if chosen else default_name
+    # Ensure a .json extension.
+    if not save_name.lower().endswith('.json'):
+        save_name += '.json'
+
+    with open(save_name, 'w') as f:
         json.dump(recorded_actions, f, indent=4)
-    print(f"\nSuccessfully saved {len(recorded_actions)} actions to {args.file}")
+    print(f"\nSuccessfully saved {len(recorded_actions)} actions to {save_name}")
     print(f"  - Mouse clicks: {sum(1 for a in recorded_actions if a['type'] == 'click')}")
     print(f"  - Mouse drags:  {sum(1 for a in recorded_actions if a['type'] == 'drag')}")
     print(f"  - Key presses:  {sum(1 for a in recorded_actions if a['type'] == 'key_press')}")
