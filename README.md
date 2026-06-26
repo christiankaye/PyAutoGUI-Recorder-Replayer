@@ -48,7 +48,7 @@ python replayer.py test_login.json --speed 2
 | 🎯 **Window setup** | After starting the script, quickly switch to the application you want to automate. |
 | ✏️ **Edit recordings** | Open the generated `.json` file in any text editor to tweak keystrokes or insert pauses. |
 | 🖥️ **No GUI?** | Open the scripts in [Thonny](https://thonny.org/) or any Python IDE for a very good graphical run/debug experience. |
-| **Real World Use** | I use this tool to fill in my vehicle mileage on SAP / Concur.
+|🌍 ***Real World Use*** |	I use this tool to fill in my vehicle mileage on SAP / Concur.
 ---
 ## Credits
 
