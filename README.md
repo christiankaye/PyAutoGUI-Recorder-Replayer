@@ -13,10 +13,10 @@ Record and replay repetitive GUI tasks with Python.
 ## Features
 
 - **Pause/Resume Recording** — Press `F9` to pause recording; press `F9` again to resume.
-- **3-Second Startup Delay** — Both the recorder and replayer give you 3 seconds to switch to the target window before recording or replaying begins.
-- **F7 to Save** — Press the `F7` at any time during recording to stop and save your JSON file. Easily change hotkey if needed.
-- **Customizable Speed** — Replay at double speed (or any multiplier) with the `--speed` flag.
-- **Editable Output** — JSON files are human-readable; hand-edit them to insert full words, phrases, or adjust timings.
+- **3-Second Startup Delay** — Both the recorder and replayer give you 3 seconds to switch to the target window before recording or replaying begins. 
+- **F7 to Save** — Press the `F7` at any time during recording to stop and save your JSON file. Easily change 'F7' hotkey.
+- **Customizable Speed** — Replay at (default) double speed (or any multiplier) with the `--speed` flag.
+- **Editable Output** — JSON files are human-readable; hand-edit them to insert whole words, natural phrases, or adjust timings.
 ---
 ## Quick Start
 
