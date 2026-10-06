@@ -7,6 +7,7 @@ Record and replay repetitive GUI tasks with Python.
 - **Record** mouse and keyboard events using [`pynput`](https://pypi.org/project/pynput/) (background listener)
 - **Replay** captured actions using [`PyAutoGUI`](https://pyautogui.readthedocs.io/)
 - Actions (clicks, coordinates, keystrokes, mouse drags) are saved to a timestamped JSON file, then read back to replicate them on demand.
+- Uses Python & Tkinter, Python's built-in GUI library.
 
 ---
 
