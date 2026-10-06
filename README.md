@@ -53,5 +53,5 @@ python replayer.py test_login.json --speed 2
 ---
 ## Credits
 
-Inspired by Yemdi's tutorial:  
-[Step by Step PyAutoGUI Tutorial](https://thethinkdrop.blogspot.com/2026/01/step-by-step-pyautogui-tutorial.html)
+Inspired by Yemdi's Step-by-Step PyAutoGUI Tutorial:  
+[Automate Mouse Recording and Replay for Repetitive GUI Tasks](https://thethinkdrop.blogspot.com/2026/01/step-by-step-pyautogui-tutorial.html)
